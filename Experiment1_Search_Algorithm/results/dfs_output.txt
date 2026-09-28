@@ -1,0 +1,2 @@
+Depth-First Search (DFS)
+Visit order: ['A', 'B', 'D', 'E', 'C', 'F', 'G']

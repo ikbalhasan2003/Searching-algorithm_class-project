@@ -1,0 +1,28 @@
+Graph (adjacency list):
+  A -> ['B', 'C']
+  B -> ['D', 'E']
+  C -> ['F', 'G']
+  D -> []
+  E -> []
+  F -> []
+  G -> []
+
+Depth-First Search (DFS)
+Visit order: ['A', 'B', 'D', 'E', 'C', 'F', 'G']
+
+Breadth-First Search (BFS)
+Visit order: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+============================================================
+Comparison of DFS and BFS
+============================================================
+DFS visits: ['A', 'B', 'D', 'E', 'C', 'F', 'G']
+BFS visits: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+Both algorithms visited all 7 nodes, but in a different order:
+  - DFS goes DEEP first  (follows one branch, then backtracks).
+  - BFS goes WIDE first  (visits all nodes of one level, then the next).
+  The first difference is at position 2 :
+    DFS visits D - BFS visits C
+
+Results saved to results/comparison.txt

@@ -1,0 +1,13 @@
+Experiment 1 - search algorithm results
+
+Graph (adjacency list):
+  A -> ['B', 'C']
+  B -> ['D', 'E']
+  C -> ['F', 'G']
+  D -> []
+  E -> []
+  F -> []
+  G -> []
+
+DFS visit order: A -> B -> D -> E -> C -> F -> G
+BFS visit order: A -> B -> C -> D -> E -> F -> G

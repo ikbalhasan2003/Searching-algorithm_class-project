@@ -1,0 +1,31 @@
+Experiment1 Search algorithm
+=====SLIDE=====
+4.2.6 Breadth-first search
+=====SLIDE=====
+4.2.6 Breadth-first search With BFS, nodes can be accessed layer by layer, from the top of the tree to the bottom of the tree, in a left-to-right manner (or right-to-left). You need to visit all the nodes at level i before you can access the nodes at level i +1. The traversal process for BFS. Visit the nodes in the following order: A, B, C, D, E, F, G. style.visibility style.visibility style.visibility
+=====SLIDE=====
+4.2.6 Breadth-first search The basic idea: 1. Start node expansion from the initial node S 0, check whether the first child node of S 0 is the target node, if it is not the target node, then expand the node; 2. Then investigate whether the second child node of S 0 is the target node; if not, expand it; 3. After inspecting and expanding all the child nodes of S 0, then inspecting and expanding the child nodes of all the child nodes of S 0 respectively, searching downwards until the target state of S g is found. 4. Do not process the nodes of layer n+1 until all the nodes of layer n are investigated and expanded. style.visibility style.visibility style.visibility style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search 4. Implementation of depth-first search algorithm def DFS(self, root): if root != None: search_queue = deque() search_queue.append (root) visited = [] else: print('root is None') return -1 while search_queue : person = search_queue.popleft () self.order.append (person) if (not person in visited) and (person in self.neighbor.keys ()): tmp = self.neighbor [person] tmp.reverse () for index in tmp : search_queue.appendleft (index) visited.append (person) style.visibility
+=====SLIDE=====
+4.2.5 The whole code style.visibility
+=====SLIDE=====
+4.2.5 The whole code style.visibility
+=====SLIDE=====
+4.2.5 The whole code style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search Blind search is an uninformed search algorithm that does not use domain knowledge. Main: depth-first search (DFS), breadth-first search (BFS), and depth-first search with iterative deepening (DFS-ID). All have properties: (1) Do not use heuristic estimation. If heuristic estimation is used, the search will proceed along the most promising path to a solution. (2) The goal is to find a certain solution to a given problem. style.visibility style.visibility style.visibility style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search Depth-first search (DFS ): attempt to get as deep into the tree as quickly as possible. Whenever the method make s a choice, it chooses the leftmost (or rightmost) branch . The tree shown can be used as an example of DFS. style.visibility style.visibility style.visibility style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search A traversal algorithm that will access A node tree in the order A, B, D, E, C, F, G will "access" a node multiple times, for example, in Figure 4-6, A, B, D, B, E, B, A, C, F, C, G.
+=====SLIDE=====
+4.2.5 Depth-first search The basic idea (search and backtracking alternate) : 1. Start from the initial node S0 to expand the node, and check whether the last 1 child node of S0 is the target node. 2. If it is not the target node, expand the node; Then investigate the last 1 child node in its expansion node, if it is not the target node, expand it, and continue to expand down. 3. When it is found that the node itself cannot be expanded, expand one of its sibling nodes; 4. If all sibling nodes cannot be expanded, their parent node is found and sibling nodes of the parent node are expanded; And so on until the target state GS is found. style.visibility style.visibility style.visibility style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search 1. build a graph, like this , or any other graph you want style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search 2. defining a class to create a graph, using an adjacency matrix class Graph(object): def __ init __(self, * args , ** kwargs ): self.order = [] # visited order self.neighbor = {} def add_node (self, node): key, val = node if not isinstance ( val , list): print('Nodes should be entered as a linear table') self.neighbor [key] = val style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search 2. defining a class to create a graph, using an adjacency matrix if __name__ == '__main__': # create a tree g = Graph() g.add_node (('A', ['B', 'C'])) g.add_node (('B', ['D', 'E'])) g.add_node (('C', ['F'])) style.visibility
+=====SLIDE=====
+4.2.5 Depth-first search 3. Implementation of breadth-first search algorithm def BFS(self, root): #First check whether the root node is empty if root != None: search_queue = deque() search_queue.append (root) visited = [] else: print('root is None') return -1 while search_queue : person = search_queue.popleft () self.order.append (person) if (not person in visited) and (person in self.neighbor.keys ()): search_queue += self.neighbor [person] visited.append (person) style.visibility

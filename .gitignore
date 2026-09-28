@@ -1,2 +1,11 @@
-# Ignore the Prompt file - it contains staging instructions only, not project code
+# Ignore the Prompt files - they contain staging instructions only, not project code
 Docs/Prompt.md
+Docs/Prompt/
+
+# Ignore the project understanding file - it is a personal notes/summary, not project source
+Project Understanding.md
+Environment Report.md
+Project Progress.md
+
+# Python cache
+__pycache__/
